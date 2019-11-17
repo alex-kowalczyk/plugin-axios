@@ -249,7 +249,8 @@
                             return [4 /*yield*/, this.axios.request(requestConfig)];
                         case 1:
                             axiosResponse = _a.sent();
-                            return [2 /*return*/, this.createResponse(axiosResponse, requestConfig)];
+                            return [4 /*yield*/, this.createResponse(axiosResponse, requestConfig)];
+                        case 2: return [2 /*return*/, _a.sent()];
                     }
                 });
             });

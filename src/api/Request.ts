@@ -119,7 +119,7 @@ export default class Request {
 
     const axiosResponse = await this.axios.request(requestConfig)
 
-    return this.createResponse(axiosResponse, requestConfig)
+    return await this.createResponse(axiosResponse, requestConfig)
   }
 
   /**
