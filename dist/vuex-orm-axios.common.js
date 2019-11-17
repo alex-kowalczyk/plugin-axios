@@ -263,18 +263,24 @@ var Request = /** @class */ (function () {
      */
     Request.prototype.createResponse = function (axiosResponse, config) {
         return __awaiter(this, void 0, void 0, function () {
-            var response;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
+            var response, _a;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
                     case 0:
                         response = new Response(this.model, config, axiosResponse);
                         if (!(config.delete !== undefined)) return [3 /*break*/, 2];
                         return [4 /*yield*/, response.delete()];
                     case 1:
-                        _a.sent();
+                        _b.sent();
                         return [2 /*return*/, response];
                     case 2:
-                        config.save && response.save();
+                        _a = config.save;
+                        if (!_a) return [3 /*break*/, 4];
+                        return [4 /*yield*/, response.save()];
+                    case 3:
+                        _a = (_b.sent());
+                        _b.label = 4;
+                    case 4:
                         return [2 /*return*/, response];
                 }
             });
